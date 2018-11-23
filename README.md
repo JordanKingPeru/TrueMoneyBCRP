@@ -1,37 +1,27 @@
-## True Money repositorio
+# True Money repositorio
 
-El objetivo del repositorio [editor on GitHub](https://github.com/JordanKingPeru/TrueMoneyBCRP/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Problema general:
+Identificación del problema:
+1.¿Por qué cambiar o dejar de usar lo actual?
+  Las mejora no importan si no están conectadas con la realidad
+2.Enamórate del problema y no de la solución
+  Crea productos - servicios que alivien, resuelvan, faciliten,agilicen, rentabilicen,etc
+3.Contextualiza
+  Dónde, cómo, con quiénes y cómo medir el éxito.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Problema identificado (contextualizado y centrado en el usuario)
 
-### Markdown
+- Conocimiento empirico de los elementos de seguridad de las monedas y billetes.
+- Deficiencia en la difusión de información
+- Estadísticas para la toma de decisión: Días más frecuentes de personas estafadas, horas del día 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Satisfacción
 
-```markdown
-Syntax highlighted code block
+- Solución del problema identificado y cómo se siente el ususario. 
 
-# Header 1
-## Header 2
-### Header 3
+- Conocer de forma clara y precisa los elementos de seguridad de los billetes y monedas. 
+- Historias: Noticias sobre biletes y monedas:
 
-- Bulleted
-- List
+## Funcionalidad del aplicativo
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JordanKingPeru/TrueMoneyBCRP/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Describe la base tecnológica de la solución propuesta.
