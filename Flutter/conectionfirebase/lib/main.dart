@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'truemoney/HomePage.dart';
 
-void main() => runApp(new MyApp());
-
+void main() => runApp(new HomePage());
+/*
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
                   )),
                   backgroundColor: Colors.lightBlue[900],
+                ),
+                body: new Container(
+                  child: Text('mi mamadre me mima'),
+                  decoration: new BoxDecoration(
+                      image: new DecorationImage(
+                        // Load image from assets
+                          image: new AssetImage('assets/images/images.png'),
+                          // Make the image cover the whole area
+                          fit: BoxFit.cover)),
                 ),
               ),
             ),
@@ -121,3 +131,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
