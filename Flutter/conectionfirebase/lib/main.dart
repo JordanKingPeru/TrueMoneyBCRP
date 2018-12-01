@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo JK',
+      title: 'LaFirme',
       home: new MyHomePage(),
     );
   }
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Center(
                       child: Text(
                     'Comprobar',
-                    style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
                   )),
                   backgroundColor: Colors.lightBlue[900],
                 ),
@@ -44,8 +44,22 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.orange,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Historia',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(
+                      child: Text(
+                    'Historia',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+                  )),
                   backgroundColor: Colors.lightBlue[900],
+                ),
+                body: ListView(
+                  children: [
+                    Image.asset(
+                      'assets/image/fondo.jpg',
+                      width: 600.0,
+                      height: 240.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -53,7 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.lightGreen,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Estadísticas',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(
+                      child: Text(
+                    'Estadísticas',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+                  )),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
@@ -62,7 +80,11 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.red,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Mi perfil',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(
+                      child: Text(
+                    'Mi perfil',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+                  )),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
