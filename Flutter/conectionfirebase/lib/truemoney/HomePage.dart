@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
-import 'truemoney/HomePage.dart';
 
-void main() => runApp(new HomePage());
-/*
-class MyApp extends StatelessWidget {
+// Copyright 2016 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'inicio/MostarBilletes.dart';
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -18,10 +22,11 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePage createState() => _HomePage();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePage extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -29,32 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         body: TabBarView(
           children: [
-            new Container(
-              child: Scaffold(
-                appBar: AppBar(
-                  title: Center(
-                      child: Text(
-                    'Comprobar',
-                    style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),
-                  )),
-                  backgroundColor: Colors.lightBlue[900],
-                ),
-                body: new Container(
-                  child: Text('mi mamadre me mima'),
-                  decoration: new BoxDecoration(
-                      image: new DecorationImage(
-                        // Load image from assets
-                          image: new AssetImage('assets/images/images.png'),
-                          // Make the image cover the whole area
-                          fit: BoxFit.cover)),
-                ),
-              ),
-            ),
+            new MostarBilletes(),
             new Container(
               color: Colors.orange,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Historia',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(child: Text('Historia',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),)),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
@@ -63,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.lightGreen,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Estadísticas',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(child: Text('Estadísticas',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),)),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
@@ -72,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.red,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Mi perfil',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(child: Text('Mi perfil',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),)),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
@@ -109,4 +97,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-*/
