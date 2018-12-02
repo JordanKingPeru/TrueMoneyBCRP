@@ -62,7 +62,7 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => EligeBillete()),
+                MaterialPageRoute(builder: (context) => EligeBillete(index)),
               );
             },
             child: null));
