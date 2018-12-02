@@ -58,7 +58,7 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
         height: double.infinity,
         decoration: new BoxDecoration(
             image: new DecorationImage(
-              image: new AssetImage("assets/image/fondo3.jpg"),
+              image: new AssetImage(index==1?"assets/image/fondo2.jpg":'assets/image/fondo1.jpg'),
               fit: BoxFit.fill,
               alignment: Alignment.center,
             )),
@@ -69,6 +69,12 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
                 MaterialPageRoute(builder: (context) => EligeBillete(index)),
               );
             },
-            child: null));
+            child: Container(
+              child: Padding(
+                
+                padding: const EdgeInsets.only(bottom: 50.0,top: 100.0),
+                child: Text(index==1?'Moneda':'Billete'),
+              )
+            )));
   }
 }
