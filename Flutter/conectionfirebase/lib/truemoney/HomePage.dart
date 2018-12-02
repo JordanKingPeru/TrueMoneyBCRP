@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'inicio/MostarBilletes.dart';
+import 'inicio/MostarHistoria.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,12 +29,20 @@ class MyHomePage extends StatefulWidget {
 class _HomePage extends State<MyHomePage> {
 
   var mostrarBilletes;
+  var mostrarHistoria;
 
-  MostrarBilletes getMostrarBilletes(){
+  getMostrarBilletes(){
     if(mostrarBilletes==null){
       mostrarBilletes=new MostrarBilletes();
     }
     return mostrarBilletes;
+  }
+
+  getMostrarHistorias(){
+    if(mostrarHistoria==null){
+      mostrarHistoria=new MostrarHistoria();
+    }
+    return mostrarHistoria;
   }
 
   @override
@@ -44,16 +53,7 @@ class _HomePage extends State<MyHomePage> {
         body: TabBarView(
           children: [
             getMostrarBilletes(),
-            new Container(
-              color: Colors.orange,
-              child: Scaffold(
-                appBar: AppBar(
-                  title: Center(child: Text('Historia',
-                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),)),
-                  backgroundColor: Colors.lightBlue[900],
-                ),
-              ),
-            ),
+            getMostrarHistorias(),
             new Container(
               color: Colors.lightGreen,
               child: Scaffold(
