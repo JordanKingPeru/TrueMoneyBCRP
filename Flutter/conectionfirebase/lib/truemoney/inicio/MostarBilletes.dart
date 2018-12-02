@@ -58,7 +58,7 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
         height: double.infinity,
         decoration: new BoxDecoration(
             image: new DecorationImage(
-              image: new AssetImage("assets/images/images.png"),
+              image: new AssetImage("assets/image/fondo3.jpg"),
               fit: BoxFit.fill,
               alignment: Alignment.center,
             )),
