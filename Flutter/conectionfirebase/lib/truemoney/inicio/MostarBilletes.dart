@@ -1,49 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
-class MostarBilletes extends StatelessWidget {
-  const MostarBilletes({Key key}) : super(key: key);
+import 'billetes/EligeBillete.dart';
 
-  @override
-  Widget build(BuildContext context) => MyMostrarBilletes();
-}
-
-class MyMostrarBilletes extends StatefulWidget {
-  MyMostrarBilletes({Key key}) : super(key: key);
+class MostrarBilletes extends StatelessWidget {
+  MostrarBilletes({Key key}) : super(key: key);
 
   @override
-  _MyMostrarBilletes createState() => _MyMostrarBilletes();
-}
-
-class _MyMostrarBilletes extends State<MyMostrarBilletes> {
   Widget build(BuildContext context) {
-    return new Container(
-      color: Colors.lightGreen,
-      child: Scaffold(
+    return new MostrarBilletesStates();
+  }
+}
+
+class MostrarBilletesStates extends StatefulWidget {
+  MostrarBilletesStates({Key key}) : super(key: key);
+
+  @override
+  _MostrarBilletesStates createState() => _MostrarBilletesStates();
+}
+
+class _MostrarBilletesStates extends State<MostrarBilletesStates> {
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
         appBar: AppBar(
           title: Center(
               child: Text(
             'Billetes',
+
             style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
           )),
           backgroundColor: Colors.lightBlue[900],
         ),
-        body: new Container(
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage("assets/image/fondo1.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          constraints: BoxConstraints.expand(),
-          child: Center(child: Text('JK')),
-        ),
-        bottomNavigationBar: new Container(
-            height: 50.0,
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-            )),
-      ),
+
+        body: getSwipper());
+  }
+
+  getSwipper() {
+    return new Swiper(
+      itemBuilder: (BuildContext context, int index) {
+        return getPage(index);
+      },
+      scrollDirection: Axis.vertical,
+      itemCount: 2,
+      pagination: new SwiperPagination(),
+      control: new SwiperControl(),
+
     );
+  }
+
+  getPage(int index){
+    return Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage("assets/images/images.png"),
+              fit: BoxFit.fill,
+              alignment: Alignment.center,
+            )),
+        child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EligeBillete()),
+              );
+            },
+            child: null));
   }
 }
