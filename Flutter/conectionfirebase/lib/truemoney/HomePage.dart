@@ -84,7 +84,7 @@ class _HomePage extends State<MyHomePage> {
             ),
             Tab(
               icon: Icon(Icons.school),
-              text: 'Historia',
+              text: 'Noticias',
             ),
             Tab(
               icon: Icon(Icons.insert_chart),
