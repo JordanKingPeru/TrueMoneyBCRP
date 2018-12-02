@@ -1,8 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import '../../general/billetes.dart';
+
+import 'InfoBillete.dart';
 
 class InfoCamaraBillete extends StatelessWidget {
   final tipo;
@@ -34,19 +34,29 @@ class _InfoCamaraBilleteStates extends State<InfoCamaraBilleteStates> {
     return Scaffold(
         appBar: AppBar(
           title: null,
-          backgroundColor: Colors.lightBlue[900],
+          backgroundColor: Colors.grey[900],
         ),
-        body:  Container(
+        body: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.width * 0.4,
-            child: new CarouselSlider(
-                items: getItems(),
-                autoPlay: true
-            )));
-
+            height: double.infinity,
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage("assets/image/fondo3.jpg"),
+                fit: BoxFit.fill,
+                alignment: Alignment.center,
+              ),
+            ),
+            child: getSelectorWidget()));
   }
 
-  getItems(){
+  getSelectorWidget() {
+    return Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height * 0.4,
+        child: new CarouselSlider(items: getItems(), autoPlay: true));
+  }
+
+  getItems() {
     return tipo.denominaciones.map<Widget>((i) {
       return new Builder(
         builder: (BuildContext context) {
@@ -55,26 +65,18 @@ class _InfoCamaraBilleteStates extends State<InfoCamaraBilleteStates> {
               height: double.infinity,
               decoration: new BoxDecoration(
                   image: new DecorationImage(
-                    image: new AssetImage(i.imagePath),
-                    fit: BoxFit.fill,
-                    alignment: Alignment.center,
-                  )
-              ),
+                image: new AssetImage(i.imagePath),
+                fit: BoxFit.fill,
+                alignment: Alignment.center,
+              )),
               child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => InfoCamaraBillete(i)),
+                      MaterialPageRoute(builder: (context) => InfoBillete(i)),
                     );
                   },
-                  child:
-                  new Text(i.name, style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy',// insert your font size here
-                  ),)
-              )
-          );
+                  child: null));
         },
       );
     }).toList();

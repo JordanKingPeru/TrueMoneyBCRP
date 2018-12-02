@@ -10,29 +10,57 @@ class Billete {
 }
 
 class Denominacion {
-  const Denominacion(this.id, this.name, this.description, this.imagePath);
+  const Denominacion(this.id, this.name, this.description, this.imagePath,this.tipoVerificaciones);
 
   final int id;
   final String name;
   final String description;
   final String imagePath;
+  final List<TipoVerificacion> tipoVerificaciones;
+}
+
+class TipoVerificacion {
+  const TipoVerificacion(this.name, this.description, this.verificaciones);
+  final String name;
+  final String description;
+  final List<Verificacion> verificaciones;
+}
+
+class Verificacion{
+  const Verificacion(this.name,this.description,this.imagesPath);
+  final String name;
+  final String description;
+  final List<String> imagesPath;
 }
 
 const List<Billete> billetes = <Billete>[
   Billete(1, "20 Soles", "Es el billete de menor denominación",
       "assets/image/20_carrusel.jpg", <Denominacion>[
-    Denominacion(1, "Primero", "Salio Primerito", "assets/image/20_v1.jpg"),
-    Denominacion(2, "Segundo", "Salio Segundo", "assets/image/20_v2.jpg"),
-    Denominacion(3, "Primero", "Salio Tercero", "assets/image/20_v3.jpg")
+    Denominacion(1, "Primero", "Salio Primerito", "assets/image/20_v1.jpg",
+      <TipoVerificacion>[
+        TipoVerificacion("Anverso","Revise el anverso del billete",
+          <Verificacion>[
+            Verificacion("Gire","Gire el billete",<String>["assets/image/20_v3GIRE_verificacion1.jpg"]),
+            Verificacion("Mire","Mire el billete",<String>["assets/image/20_v3MIRE-verificacion-1.jpg"])
+          ]
+        )
+      ]
+    ),
+    Denominacion(2, "Segundo", "Salio Segundo", "assets/image/20_v2.jpg",
+        <TipoVerificacion>[]),
+    Denominacion(3, "Primero", "Salio Tercero", "assets/image/20_v3.jpg",
+        <TipoVerificacion>[])
   ]),
   Billete(2, "100 Soles", "Es el billete de mayor denominación",
       "assets/image/100_carrusel.jpg", <Denominacion>[
-        Denominacion(4, "Primero", "Salio Primerito", "assets/image/100_v1.jpg"),
-        Denominacion(5, "Segundo", "Salio Segundo", "assets/image/100_v2.jpg"),
-        Denominacion(6, "Primero", "Salio Tercero", "assets/image/100_v3.jpg")
+        Denominacion(4, "Primero", "Salio Primerito", "assets/image/100_v1.jpg",
+            <TipoVerificacion>[]),
+        Denominacion(5, "Segundo", "Salio Segundo", "assets/image/100_v2.jpg",
+            <TipoVerificacion>[]),
+        Denominacion(6, "Primero", "Salio Tercero", "assets/image/100_v3.jpg",
+            <TipoVerificacion>[])
       ])
 ];
-
 
 const List<Billete> monedas = <Billete>[
 ];
