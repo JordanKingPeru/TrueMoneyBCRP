@@ -75,7 +75,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
                   child: Padding(
                 padding: const EdgeInsets.only(top: 10.0, left: 20),
                 child: Text(
-                  index == 1 ? Noticias_bd.'Monedas' : 'Quiñones',
+                  index == 1 ? 'Monedas' : 'Quiñones',
                   style: TextStyle(
                     fontSize: 40.0,
                     color: Colors.white,
