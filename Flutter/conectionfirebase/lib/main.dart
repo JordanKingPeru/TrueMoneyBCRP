@@ -74,12 +74,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    controller = CameraController(cameras[0], ResolutionPreset.medium);
-    controller.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {});
+    availableCameras().then((camerasLoaded){
+      cameras = camerasLoaded;
+      controller = CameraController(cameras[0], ResolutionPreset.medium);
+      controller.initialize().then((_) {
+        if (!mounted) {
+          return;
+        }
+        setState(() {});
+      });
     });
   }
 
