@@ -27,6 +27,15 @@ class MyHomePage extends StatefulWidget {
 
 class _HomePage extends State<MyHomePage> {
 
+  var mostrarBilletes;
+
+  MostrarBilletes getMostrarBilletes(){
+    if(mostrarBilletes==null){
+      mostrarBilletes=new MostrarBilletes();
+    }
+    return mostrarBilletes;
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -34,7 +43,7 @@ class _HomePage extends State<MyHomePage> {
       child: Scaffold(
         body: TabBarView(
           children: [
-            new MostarBilletes(),
+            getMostrarBilletes(),
             new Container(
               color: Colors.orange,
               child: Scaffold(
