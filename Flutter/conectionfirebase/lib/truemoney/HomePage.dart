@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'inicio/MostarBilletes.dart';
 import 'inicio/MostarHistoria.dart';
+import 'inicio/MostrarEstadistica.dart';
+import 'inicio/MostrarLogin.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -30,6 +32,8 @@ class _HomePage extends State<MyHomePage> {
 
   var mostrarBilletes;
   var mostrarHistoria;
+  var mostrarEstadistica;
+  var mostrarLogin;
 
   getMostrarBilletes(){
     if(mostrarBilletes==null){
@@ -38,6 +42,7 @@ class _HomePage extends State<MyHomePage> {
     return mostrarBilletes;
   }
 
+
   getMostrarHistorias(){
     if(mostrarHistoria==null){
       mostrarHistoria=new MostrarHistoria();
@@ -45,6 +50,21 @@ class _HomePage extends State<MyHomePage> {
     return mostrarHistoria;
   }
 
+
+  getMostrarEstadistica(){
+    if(mostrarEstadistica==null){
+      mostrarEstadistica=new MostrarEstadistica();
+    }
+    return mostrarEstadistica;
+  }
+
+  getMostrarLogin(){
+
+    if(mostrarLogin==null){
+      mostrarLogin=new MostrarLogin();
+    }
+    return mostrarLogin;
+  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -54,6 +74,7 @@ class _HomePage extends State<MyHomePage> {
           children: [
             getMostrarBilletes(),
             getMostrarHistorias(),
+            getMostrarEstadistica()/*
             new Container(
               color: Colors.lightGreen,
               child: Scaffold(
@@ -63,7 +84,9 @@ class _HomePage extends State<MyHomePage> {
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
-            ),
+            )*/,
+            getMostrarLogin()
+            /*
             new Container(
               color: Colors.red,
               child: Scaffold(
@@ -73,7 +96,7 @@ class _HomePage extends State<MyHomePage> {
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
         bottomNavigationBar: TabBar(
