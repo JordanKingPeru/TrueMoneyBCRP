@@ -27,7 +27,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         appBar: AppBar(
           title: Center(
               child: Text(
-            'Historia',
+            'Noticias',
             style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
           )),
           backgroundColor: Colors.lightBlue[900],
@@ -54,7 +54,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         decoration: new BoxDecoration(
             image: new DecorationImage(
           image: new AssetImage(index == 1
-              ? "assets/image/IMG_quinones_desenfoque.jpg"
+              ? "assets/image/Noticias/Noticia1.png"
               : 'assets/image/IMG_quinones.jpg'),
           fit: BoxFit.fill,
           alignment: Alignment.center,
