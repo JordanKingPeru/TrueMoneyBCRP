@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import 'InfoCamaraBillete.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class EligeBillete extends StatelessWidget {
   static const TIPO_BILLETE = 0;
@@ -53,8 +52,8 @@ class _EligeBilleteStates extends State<EligeBilleteStates> {
             alignment: Alignment.center,
           ),
         ),
-        child: null);
-
+        child: getSelectorWidget());
+/*
     GestureDetector(
         onTap: () {
           Navigator.push(
@@ -72,6 +71,29 @@ class _EligeBilleteStates extends State<EligeBilleteStates> {
                 alignment: Alignment.center,
               ),
             ),
-            child: null));
+            child: null));*/
+  }
+
+  getSelectorWidget() {
+    return Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.width * 0.4,
+        child: new CarouselSlider(
+            items: [1,2,3,4,5].map((i) {
+              return new Builder(
+                builder: (BuildContext context) {
+                  return new Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: new EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: new BoxDecoration(
+                          color: Colors.amber
+                      ),
+                      child: new Text('text $i', style: new TextStyle(fontSize: 16.0),)
+                  );
+                },
+              );
+            }).toList(),
+            autoPlay: true
+        ));
   }
 }
