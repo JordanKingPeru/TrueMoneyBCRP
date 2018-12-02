@@ -27,7 +27,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         appBar: AppBar(
           title: Center(
               child: Text(
-            'Comprueba',
+            'Historia',
             style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
           )),
           backgroundColor: Colors.lightBlue[900],
@@ -54,8 +54,8 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         decoration: new BoxDecoration(
             image: new DecorationImage(
           image: new AssetImage(index == 1
-              ? "assets/image/fondo2.jpg"
-              : 'assets/image/fondo1.jpg'),
+              ? "assets/image/IMG_quinones_desenfoque.jpg"
+              : 'assets/image/IMG_quinones.jpg'),
           fit: BoxFit.fill,
           alignment: Alignment.center,
         )),
@@ -74,7 +74,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
                   child: Padding(
                 padding: const EdgeInsets.only(top: 10.0, left: 20),
                 child: Text(
-                  index == 1 ? 'Monedas' : 'Billetes',
+                  index == 1 ? 'Monedas' : 'Quiñones',
                   style: TextStyle(
                     fontSize: 40.0,
                     color: Colors.white,
