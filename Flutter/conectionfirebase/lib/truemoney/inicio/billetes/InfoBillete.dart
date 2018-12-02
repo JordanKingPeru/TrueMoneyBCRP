@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import '../../general/billetes.dart';
+import '../../../main.dart';
 
 class InfoBillete extends StatelessWidget {
   final tipo;
@@ -144,7 +145,7 @@ class TabVerificacion extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => InfoBillete(tipo)),
+                    MaterialPageRoute(builder: (context) => MyApp()),
                   );
                 },
                 child: // Text(tipo.description)
