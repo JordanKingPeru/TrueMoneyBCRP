@@ -4,23 +4,23 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'billetes/EligeBillete.dart';
 
-class MostrarBilletes extends StatelessWidget {
-  MostrarBilletes({Key key}) : super(key: key);
+class MostrarHistoria extends StatelessWidget {
+  MostrarHistoria({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return new MostrarBilletesStates();
+    return new MostrarHistoriaStates();
   }
 }
 
-class MostrarBilletesStates extends StatefulWidget {
-  MostrarBilletesStates({Key key}) : super(key: key);
+class MostrarHistoriaStates extends StatefulWidget {
+  MostrarHistoriaStates({Key key}) : super(key: key);
 
   @override
-  _MostrarBilletesStates createState() => _MostrarBilletesStates();
+  _MostrarHistoriaStates createState() => _MostrarHistoriaStates();
 }
 
-class _MostrarBilletesStates extends State<MostrarBilletesStates> {
+class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
