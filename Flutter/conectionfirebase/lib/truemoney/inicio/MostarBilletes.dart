@@ -24,15 +24,18 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           title: Center(
               child: Text(
-            'Comprobar',
+            'Billetes',
+
             style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
           )),
           backgroundColor: Colors.lightBlue[900],
         ),
+
         body: getSwipper());
   }
 
@@ -45,6 +48,7 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
       itemCount: 2,
       pagination: new SwiperPagination(),
       control: new SwiperControl(),
+
     );
   }
 

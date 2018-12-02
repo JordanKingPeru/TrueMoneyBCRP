@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'truemoney/HomePage.dart';
 
 void main() => runApp(new HomePage());
-/*
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,18 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.lightBlue[900],
                 ),
                 body: new Container(
-                  child: Text('mi mamadre me mima'),
                   decoration: new BoxDecoration(
-                      image: new DecorationImage(
-                        // Load image from assets
-                          image: new AssetImage('assets/images/images.png'),
-                          // Make the image cover the whole area
-                          fit: BoxFit.cover)),
+                    image: new DecorationImage(
+                      // Load image from assets
+                      image: new AssetImage('assets/image/fondo1.jpg'),
+                      // Make the image cover the whole area
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Text('JK'),
                 ),
               ),
             ),
             new Container(
-              color: Colors.orange,
               child: Scaffold(
                 appBar: AppBar(
                   title: Center(
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 body: ListView(
                   children: [
                     Image.asset(
-                      'assets/image/fondo.jpg',
+                      'assets/image/fondo2.jpg',
                       width: 600.0,
                       height: 240.0,
                       fit: BoxFit.cover,
@@ -131,4 +132,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-*/
