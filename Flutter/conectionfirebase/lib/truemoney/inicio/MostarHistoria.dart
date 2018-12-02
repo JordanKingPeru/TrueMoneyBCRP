@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:conectionfirebase/truemoney/general/noticias.dart';
 
 import 'billetes/EligeBillete.dart';
 
@@ -54,7 +55,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         decoration: new BoxDecoration(
             image: new DecorationImage(
           image: new AssetImage(index == 1
-              ? "assets/image/Noticias/Noticia1.png"
+              ? "assets/image/Noticias/Noticia01.jpg"
               : 'assets/image/IMG_quinones.jpg'),
           fit: BoxFit.fill,
           alignment: Alignment.center,
@@ -74,7 +75,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
                   child: Padding(
                 padding: const EdgeInsets.only(top: 10.0, left: 20),
                 child: Text(
-                  index == 1 ? 'Monedas' : 'Quiñones',
+                  index == 1 ? Noticias_bd.'Monedas' : 'Quiñones',
                   style: TextStyle(
                     fontSize: 40.0,
                     color: Colors.white,
