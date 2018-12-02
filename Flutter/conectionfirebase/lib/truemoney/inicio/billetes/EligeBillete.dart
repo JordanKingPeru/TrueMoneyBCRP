@@ -1,8 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'InfoCamaraBillete.dart';
+
 import '../../general/billetes.dart';
+import 'InfoCamaraBillete.dart';
 
 class EligeBillete extends StatelessWidget {
   final tipo;
@@ -34,7 +35,7 @@ class _EligeBilleteStates extends State<EligeBilleteStates> {
     return Scaffold(
         appBar: AppBar(
           title: null,
-          backgroundColor: Colors.lightBlue[900],
+          backgroundColor: Colors.grey[900],
         ),
         body: getWidgetType());
 
@@ -53,69 +54,38 @@ class _EligeBilleteStates extends State<EligeBilleteStates> {
           ),
         ),
         child: getSelectorWidget());
-/*
-    GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => InfoCamaraBillete()),
-          );
-        },
-        child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new AssetImage("assets/images/images.png"),
-                fit: BoxFit.fill,
-                alignment: Alignment.center,
-              ),
-            ),
-            child: null));*/
   }
 
   getSelectorWidget() {
-
     return Container(
         width: double.infinity,
-        height: MediaQuery.of(context).size.width * 0.4,
-        child: new CarouselSlider(
-            items: getItems(),
-            autoPlay: true
-        ));
+        height: MediaQuery.of(context).size.height * 0.4,
+        child: new CarouselSlider(items: getItems(), autoPlay: true));
   }
-  getItems(){
-    var listTipo = tipo == 1 ? monedas : billetes ;
+
+  getItems() {
+    var listTipo = tipo == 1 ? monedas : billetes;
     return listTipo.map((i) {
-      return new Builder(
-        builder: (BuildContext context) {
-          return new Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: new BoxDecoration(
-                  image: new DecorationImage(
-                    image: new AssetImage(i.imagePath),
-                    fit: BoxFit.fill,
-                    alignment: Alignment.center,
-                  )
-              ),
-              child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => InfoCamaraBillete(i)),
-                    );
-                  },
-                  child:
-                  new Text(i.name, style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy',// insert your font size here
-                  ),)
-              )
-          );
-        },
-      );
+      return new Builder(builder: (BuildContext context) {
+        return new Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: new BoxDecoration(
+                image: new DecorationImage(
+              image: new AssetImage(i.imagePath),
+              fit: BoxFit.fill,
+              alignment: Alignment.center,
+            )),
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InfoCamaraBillete(i)),
+                  );
+                },
+                child: null));
+      });
     }).toList();
   }
 }
