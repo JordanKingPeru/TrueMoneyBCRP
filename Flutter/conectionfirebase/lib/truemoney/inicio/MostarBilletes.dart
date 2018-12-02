@@ -20,22 +20,30 @@ class _MyMostrarBilletes extends State<MyMostrarBilletes> {
     return new Container(
       color: Colors.lightGreen,
       child: Scaffold(
-          appBar: AppBar(
-            title: Center(
-                child: Text(
-              'Billetes',
-              style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
-            )),
-            backgroundColor: Colors.lightBlue[900],
+        appBar: AppBar(
+          title: Center(
+              child: Text(
+            'Billetes',
+            style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+          )),
+          backgroundColor: Colors.lightBlue[900],
+        ),
+        body: new Container(
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage("assets/image/fondo1.jpg"),
+              fit: BoxFit.cover,
+            ),
           ),
-          body: new Container(
-              decoration: new BoxDecoration(
-                image: new DecorationImage(
-                  image: new AssetImage("assets/images/images.png"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Text('mi mamadre me mima'))),
+          constraints: BoxConstraints.expand(),
+          child: Center(child: Text('JK')),
+        ),
+        bottomNavigationBar: new Container(
+            height: 50.0,
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+            )),
+      ),
     );
   }
 }
