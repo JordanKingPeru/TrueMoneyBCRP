@@ -9,6 +9,9 @@ import 'package:conectionfirebase/camara/deteccion.dart';
 import 'package:image_cropper/image_cropper.dart';
 
 //void main() => runApp(new MyApp());
+import 'truemoney/HomePage.dart';
+
+void main() => runApp(new HomePage());
 
 /* camera  */
 
@@ -16,12 +19,12 @@ List<CameraDescription> cameras;
 //ruta de la foto.
 String imagePath;
 
-
+/*
 Future<void> main() async {
   cameras = await availableCameras();
   runApp(MyApp());
 }
-
+*/
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -37,7 +40,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo JK',
+      title: 'LaFirme',
       home: new MyHomePage(),
     );
   }
@@ -232,21 +235,47 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Center(
                       child: Text(
                     'Comprobar',
-                    style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
                   )),
                   backgroundColor: Colors.lightBlue[900],
                 ),
+<<<<<<< HEAD
                 body : Center(
                   child :Text('mi mama me mima'),
+=======
+                body: new Container(
+                  decoration: new BoxDecoration(
+                    image: new DecorationImage(
+                      // Load image from assets
+                      image: new AssetImage('assets/image/fondo1.jpg'),
+                      // Make the image cover the whole area
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Text('JK'),
+>>>>>>> origin/master
                 ),
               ),
             ),
             new Container(
-              color: Colors.orange,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Historia',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(
+                      child: Text(
+                    'Historia',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+                  )),
                   backgroundColor: Colors.lightBlue[900],
+                ),
+                body: ListView(
+                  children: [
+                    Image.asset(
+                      'assets/image/fondo2.jpg',
+                      width: 600.0,
+                      height: 240.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -254,7 +283,11 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.lightGreen,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Estadísticas',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(
+                      child: Text(
+                    'Estadísticas',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+                  )),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
@@ -263,7 +296,11 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.red,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Center(child: Text('Mi perfil',style: TextStyle(fontFamily: 'Satisfy',fontSize: 30),)),
+                  title: Center(
+                      child: Text(
+                    'Mi perfil',
+                    style: TextStyle(fontFamily: 'Satisfy', fontSize: 30),
+                  )),
                   backgroundColor: Colors.lightBlue[900],
                 ),
               ),
