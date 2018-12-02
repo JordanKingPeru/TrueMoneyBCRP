@@ -65,6 +65,9 @@ flutter:
       fonts:
         - asset: fonts/Satisfy-Regular.ttf
           style: italic
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
 
   #
   # For details regarding fonts from package dependencies,

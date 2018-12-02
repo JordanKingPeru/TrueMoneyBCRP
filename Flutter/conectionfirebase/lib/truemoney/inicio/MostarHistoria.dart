@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:conectionfirebase/truemoney/general/noticias.dart';
-
+import 'package:conectionfirebase/truemoney/inicio/billetes/EligeNoticia.dart';
 import 'billetes/EligeBillete.dart';
 
 class MostrarHistoria extends StatelessWidget {
@@ -42,7 +42,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         return getPage(index);
       },
       scrollDirection: Axis.vertical,
-      itemCount: 2,
+      itemCount: Noticias.length,
       pagination: new SwiperPagination(),
       control: new SwiperControl(),
     );
@@ -54,9 +54,7 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
         height: double.infinity,
         decoration: new BoxDecoration(
             image: new DecorationImage(
-          image: new AssetImage(index == 1
-              ? "assets/image/Noticias/Noticia01.jpg"
-              : 'assets/image/IMG_quinones.jpg'),
+          image: new AssetImage(Noticias[index].imagePath),
           fit: BoxFit.fill,
           alignment: Alignment.center,
         )),
@@ -64,25 +62,31 @@ class _MostrarHistoriaStates extends State<MostrarHistoriaStates> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => EligeBillete(index)),
+                MaterialPageRoute(builder: (context) => EligeNoticia(index)),
               );
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 300.0,),
+              padding: const EdgeInsets.only(
+                top: 300.0,
+              ),
               child: Container(
-
-                color: Color.fromRGBO(0, 0, 0, 0.5),
+                  color: Color.fromRGBO(0, 0, 0, 0.5),
                   child: Padding(
-                padding: const EdgeInsets.only(top: 10.0, left: 20),
-                child: Text(
-                  index == 1 ? 'Monedas' : 'Quiñones',
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy',// insert your font size here
-                  ),
-                ),
-              )),
+                    padding: const EdgeInsets.only(top: 10.0, left: 20),
+                    child: Center(
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          Noticias[index].titulo,
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            color: Colors.white,
+                            fontFamily: 'Roboto', // insert your font size here
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
             )));
   }
 }
