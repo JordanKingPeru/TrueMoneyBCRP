@@ -40,9 +40,17 @@ const List<Billete> billetes = <Billete>[
       <TipoVerificacion>[
         TipoVerificacion("Anverso","Revise el anverso del billete",
           <Verificacion>[
+            Verificacion("Mire","Mire el billete",<String>["assets/image/20_v3MIRE_verificacion3.jpg"]),
             Verificacion("Gire","Gire el billete",<String>["assets/image/20_v3GIRE_verificacion1.jpg"]),
-            Verificacion("Mire","Mire el billete",<String>["assets/image/20_v3MIRE-verificacion-1.jpg"])
+            Verificacion("Toque","Toque el billete",<String>["assets/image/20v3_TOQUE_verificacion1.jpg"])
           ]
+        ),
+        TipoVerificacion("Reverso","Revise el reverso del billete",
+            <Verificacion>[
+              Verificacion("Gire","Gire el billete",<String>["assets/image/IMG_20_REVERSO.jpg"]),
+              Verificacion("Mire","Mire el billete",<String>["assets/image/IMG_20_REVERSO.jpg"]),
+              Verificacion("Toque","Toque el billete",<String>["assets/image/IMG_20_REVERSO.jpg"])
+            ]
         )
       ]
     ),

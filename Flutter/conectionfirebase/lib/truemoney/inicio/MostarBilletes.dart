@@ -43,7 +43,7 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
       scrollDirection: Axis.vertical,
       itemCount: 2,
       pagination: new SwiperPagination(),
-      control: new SwiperControl(),
+      //control: new SwiperControl(), //agregar flechas de guia
     );
   }
 
@@ -67,21 +67,22 @@ class _MostrarBilletesStates extends State<MostrarBilletesStates> {
               );
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 300.0,),
+              padding: const EdgeInsets.only(
+                top: 0.0,
+              ),
               child: Container(
-
-                color: Color.fromRGBO(0, 0, 0, 0.5),
-                  child: Padding(
-                padding: const EdgeInsets.only(top: 10.0, left: 20),
-                child: Text(
-                  index == 1 ? 'Monedas' : 'Billetes',
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.white,
-                    fontFamily: 'Satisfy',// insert your font size here
-                  ),
-                ),
-              )),
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  child: Center(
+                    //margin: EdgeInsetsDirectional.only(bottom: 50),
+                    child: Text(
+                      index == 1 ? 'Monedas' : 'Billetes',
+                      style: TextStyle(
+                        fontSize: 45.0,
+                        color: Colors.white,
+                        fontFamily: 'Satisfy', // insert your font size here
+                      ),
+                    ),
+                  )),
             )));
   }
 }

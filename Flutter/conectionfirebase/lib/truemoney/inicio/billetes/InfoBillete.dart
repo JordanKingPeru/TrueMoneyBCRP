@@ -34,12 +34,19 @@ class _InfoBilleteStates extends State<InfoBilleteStates> {
     return Scaffold(
         appBar: AppBar(
           title: null,
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Colors.lightBlue[900],
         ),
         body: Container(
             width: double.infinity,
             height: double.infinity,
             //height: MediaQuery.of(context).size.width * 0.4,
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage("assets/image/fondo3.jpg"),
+                fit: BoxFit.fill,
+                alignment: Alignment.center,
+              ),
+            ),
             child: DefaultTabController(
               length: tipo.tipoVerificaciones.length,
               child: Scaffold(
@@ -91,19 +98,27 @@ class TabTipoVerificacion extends StatelessWidget {
     return DefaultTabController(
       length: tipo.verificaciones.length,
       child: Scaffold(
-        body: TabBarView(
-          children: getTabsWidgets(tipo),
-        ),
-        bottomNavigationBar: TabBar(
-          tabs: getTabsOptions(tipo),
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white54,
-          indicatorSize: TabBarIndicatorSize.label,
-          indicatorPadding: EdgeInsets.all(2.0),
-          indicatorColor: Colors.blue,
-        ),
-        backgroundColor: Colors.black,
-      ),
+          body: Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage("assets/image/fondo3.jpg"),
+                fit: BoxFit.fill,
+                alignment: Alignment.center,
+              ),
+            ),
+            child: TabBarView(
+              children: getTabsWidgets(tipo),
+            ),
+          ),
+          bottomNavigationBar: TabBar(
+            tabs: getTabsOptions(tipo),
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.white54,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorPadding: EdgeInsets.all(2.0),
+            indicatorColor: Colors.blue,
+          ),
+          backgroundColor: Colors.white12),
     );
   }
 
@@ -112,7 +127,7 @@ class TabTipoVerificacion extends StatelessWidget {
 
     for (Verificacion tipoVerificacion in tipo.verificaciones) {
       growableList.add(Tab(
-        icon: Icon(Icons.insert_chart),
+        icon: Icon(Icons.remove_red_eye),
         text: tipoVerificacion.name,
       ));
     }
@@ -149,20 +164,12 @@ class TabVerificacion extends StatelessWidget {
                   );
                 },
                 child: // Text(tipo.description)
-                    Row(
+                    Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                       Container(
-                          width: MediaQuery.of(context).size.width * 0.5,
-                          height: double.infinity,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: getTabsWidgets(context),
-                          )),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        height: double.infinity,
+                        //width: MediaQuery.of(context).size.width * 0.5,
+                        //height: double.infinity,
                         child: Center(
                             child: Text(
                           tipo.description,
@@ -171,7 +178,15 @@ class TabVerificacion extends StatelessWidget {
                               fontSize: 30,
                               color: Colors.white),
                         )),
-                      )
+                      ),
+                      Container(
+                          width: MediaQuery.of(context).size.width * 0.7,
+                          //height: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: getTabsWidgets(context),
+                          )),
                     ])));
       },
     );

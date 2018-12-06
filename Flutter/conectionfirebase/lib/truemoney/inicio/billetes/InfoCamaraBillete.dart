@@ -34,7 +34,7 @@ class _InfoCamaraBilleteStates extends State<InfoCamaraBilleteStates> {
     return Scaffold(
         appBar: AppBar(
           title: null,
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Colors.lightBlue[900],
         ),
         body: Container(
             width: double.infinity,
