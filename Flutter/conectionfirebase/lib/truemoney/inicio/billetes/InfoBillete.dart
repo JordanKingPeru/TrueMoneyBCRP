@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import '../../general/billetes.dart';
+import 'InfoCamaraBillete.dart';
 import '../../../main.dart';
 
 class InfoBillete extends StatelessWidget {
@@ -187,9 +189,37 @@ class TabVerificacion extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: getTabsWidgets(context),
                           )),
+                      Container(child: new CarouselSlider(items: getItemsDetalles(), autoPlay: true,viewportFraction: 0.9,aspectRatio: 2.0,),),
                     ])));
       },
+
     );
+  }
+
+  getItemsDetalles() {
+    var listTipo = tipo == 1 ? monedas : billetes;
+    return listTipo.map((i) {
+      return new Builder(builder: (BuildContext context) {
+        return new Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage(i.imagePath),
+                  fit: BoxFit.fill,
+                  alignment: Alignment.center,
+                )),
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InfoCamaraBillete(i)),
+                  );
+                },
+                child: null));
+      });
+    }).toList();
   }
 
   List<StatelessWidget> getTabsWidgets(BuildContext context) {

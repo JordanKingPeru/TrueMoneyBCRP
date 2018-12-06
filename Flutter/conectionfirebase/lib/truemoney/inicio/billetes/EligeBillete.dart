@@ -57,10 +57,29 @@ class _EligeBilleteStates extends State<EligeBilleteStates> {
   }
 
   getSelectorWidget() {
-    return Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.4,
-        child: new CarouselSlider(items: getItems(), autoPlay: true));
+    return Column(
+      children: [
+        Padding(
+            padding: EdgeInsetsDirectional.only(
+          top: MediaQuery.of(context).size.height * 0.25,
+        )),
+        Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.4,
+            child: new CarouselSlider(
+              items: getItems(),
+              autoPlay: true,
+              viewportFraction: 0.9,
+              aspectRatio: 2.0,
+            )),
+        new Container(
+            child: Text(
+          'Elige una denominación',
+          style: TextStyle(
+              fontFamily: 'Roboto', fontSize: 30, color: Colors.white),
+        )),
+      ],
+    );
   }
 
   getItems() {
@@ -77,14 +96,13 @@ class _EligeBilleteStates extends State<EligeBilleteStates> {
               alignment: Alignment.center,
             )),
             child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => InfoCamaraBillete(i)),
-                  );
-                },
-                child: null));
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InfoCamaraBillete(i)),
+                );
+              },
+            ));
       });
     }).toList();
   }

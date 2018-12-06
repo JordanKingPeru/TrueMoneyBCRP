@@ -51,8 +51,8 @@ class _InfoCamaraBilleteStates extends State<InfoCamaraBilleteStates> {
 
   getSelectorWidget() {
     return Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.4,
+        //width: double.infinity,
+        //height: MediaQuery.of(context).size.height * 0.4,
         child: new CarouselSlider(items: getItems(), autoPlay: true));
   }
 
