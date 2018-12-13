@@ -91,3 +91,132 @@ image_fusion = np.concatenate((image_fusion1, image_fusion2), axis=0)
 cv2.imshow('result',image_fusion)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+
+##############################################################################################################################
+##############################################################################################################################
+##############################################################################################################################
+##############################################################################################################################
+##############################################################################################################################
+
+
+import requests
+import base64
+import json
+
+headers = {
+    'Content-Type': 'application/json',
+}
+
+params = (
+    ('key', 'AIzaSyAzHbMXGH6GKPRGhNaSp6ikWHrQlpz9Zw8'),
+)
+
+
+#convertir las imagenes a binario. base64
+with open("seriev.jpg", "rb") as image_file:
+    encoded_string_seriev = base64.b64encode(image_file.read())
+    
+
+with open("serieh.jpg", "rb") as image_file:
+    encoded_string_serieh = base64.b64encode(image_file.read())    
+#generar los JSON
+
+seriev_data = {
+  "requests": [
+    {
+      "image": {
+        "content": encoded_string_seriev.decode('ascii')
+      },
+      "features": [
+        {
+          "type": "TEXT_DETECTION"
+        }
+      ]
+    }
+  ]
+}
+
+
+serieh_data = {
+  "requests": [
+    {
+      "image": {
+        "content": encoded_string_serieh.decode('ascii') 
+      },
+      "features": [
+        {
+          "type": "TEXT_DETECTION"
+        }
+      ]
+    }
+  ]
+}
+
+with open('seriev.json', 'w') as outfile:
+    json.dump(seriev_data, outfile)    
+    
+with open('serieh.json', 'w') as outfile:
+    json.dump(serieh_data, outfile)    
+
+#print(encoded_string_seriev)    
+#print(encoded_string_serieh)    
+
+#leer las imagenes y convertirlas a base 64
+
+#serie uno
+#----------
+data = open('seriev.json', 'rb').read()
+response = requests.post('https://vision.googleapis.com/v1/images:annotate', headers=headers, params=params, data=data)
+jsonresponse = response.json()
+serie_vertical = jsonresponse['responses'][0]['textAnnotations'][0]['description']
+serie_vertical = serie_vertical.replace('O','0')
+serie_vertical = serie_vertical.replace('\n','')
+print("serie vertical: " + serie_vertical)
+
+#serie dos
+#----------
+data = open('serieh.json', 'rb').read()
+response = requests.post('https://vision.googleapis.com/v1/images:annotate', headers=headers, params=params, data=data)
+jsonresponse = response.json()
+serie_horizontal = jsonresponse['responses'][0]['textAnnotations'][0]['description']
+serie_horizontal = serie_horizontal.replace('O','0')
+serie_horizontal = serie_horizontal.replace('\n','')
+print("serie horizontal: " + serie_horizontal)
+
+
+#coinciden:
+if serie_horizontal == serie_vertical:
+    print("las series son IGUALES")
+else:
+    print("las series son DIFERENTES")
+
+#verificar con el bcrp. no disponible.
+
+#algoritmo de distancias.
+import requests
+r = requests.post(
+    "https://api.deepai.org/api/image-similarity",
+    files={
+        'image1': open('img1.jpg', 'rb'),
+        'image2': open('img2.jpg', 'rb'),
+    },
+    headers={'api-key': 'cfa96194-a402-44e8-b67a-1e3f33ff80df'}
+)
+
+distancia_json = r.json()
+distancia = distancia_json['output']['distance']
+print("La distancia de las caras son:" + str(distancia))
+#algoritmo con el numero 100.
+
+#BCR servicio que no responden.
+
+#import requests
+#url = 'http://ec2-34-220-86-67.us-west-2.compute.amazonaws.com/billetes'
+#payload = {}
+#headers = {}
+#response = requests.request('GET', url, headers = headers, data = payload, allow_redirects=False, timeout=None)
+#print(response.text)
+
+#https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
+#https://stackoverflow.com/questions/39308030/how-do-i-increase-the-contrast-of-an-image-in-python-opencv/41075028
